@@ -17,8 +17,8 @@ Built with **React + TypeScript** and styled with **CSS Modules**.
 Clone the project:
 
 ```bash
-git clone https://github.com/your-username/shopdoc-frontend.git
-cd shopdoc-frontend
+git clone git@github.com:Radymyr/checkout.git
+cd checkout
 ````
 
 Install dependencies:
