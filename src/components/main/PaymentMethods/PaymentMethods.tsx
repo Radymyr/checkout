@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './paymentMethods.module.css'
+import styles from './PaymentMethods.module.css'
 import Oval from '../../../assets/images/oval.png'
 
 type PaymentMethod = {
