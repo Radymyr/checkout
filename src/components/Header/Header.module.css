@@ -1,0 +1,171 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding-top: 27px;
+    padding-bottom: 19px;
+    background-color: var(--primary-color);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-regular);
+    color: var(--text-white-color);
+}
+
+.headerLogo {
+    display: block;
+    width: 15rem;
+
+    @media (max-width: 1024px) {
+        flex: 1;
+    }
+}
+
+.headerContainer {
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 86%;
+    margin: 0 auto;
+}
+
+.headerMenu {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+
+.headerList {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 1024px) {
+        gap: 20px;
+    }
+}
+
+.headerLink {
+    text-decoration: none;
+    color: var(--text-white-color);
+
+}
+
+.headerButtons {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.headerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    width: 24px;
+    height: 24px;
+}
+
+.menu {
+    display: none;
+    border: none;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-white-color);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1024px) {
+        display: inline-block;
+
+    }
+}
+
+.menu::before,
+.menu::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-white-color);
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.menu::before {
+    top: -8px;
+}
+
+.menu::after {
+    top: 8px;
+}
+
+.menu.open {
+    background-color: transparent;
+}
+
+.menu.open::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu.open::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+.mobileMenu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    background-color: var(--primary-color);
+    transition: top 0.3s ease;
+    padding: 2rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mobileMenu.show {
+    top: 0;
+}
+
+.closeButton {
+    padding-right: 4rem;
+    align-self: flex-end;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-white-color);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.mobileList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobileList a {
+    color: var(--text-white-color);
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+@media (min-width: 1025px) {
+    .mobileMenu {
+        display: none;
+    }
+}
+
+
+

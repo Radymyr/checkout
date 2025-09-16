@@ -1,0 +1,90 @@
+.payment {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    margin-bottom: 2.4rem;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.inputWrapper {
+    position: relative;
+}
+
+.inputWrapper::after {
+    position: absolute;
+    content: attr(data-label);
+    font-size: var(--fs-sm);
+    font-family: var(--font-secondary);
+    color: var(--text--subtext-color);
+    background-color: #fff;
+    padding: 0 0.5rem;
+    top: -0.8rem;
+    left: 2rem;
+}
+
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 5.6rem;
+    padding-left: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--text--subtext-color);
+    font-family: var(--font-secondary);
+    font-size: var(--fs-base);
+    color: var(--text-dark-color);
+}
+
+.input::placeholder {
+    color: var(--text-placeholder-color);
+}
+
+.methods {
+    display: flex;
+    gap: 2.4rem;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
+}
+
+.subtitle {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    margin-bottom: 0.8rem;
+}
+
+.method {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    border: 1px solid var(--text--subtext-color);
+    border-radius: 0.8rem;
+    cursor: pointer;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.methodName {
+    flex: 1;
+    font-size: var(--fs-base);
+    font-family: var(--font-secondary);
+}
+
+.radio {
+    width: 18px;
+    height: 18px;
+}

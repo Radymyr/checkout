@@ -1,0 +1,21 @@
+.personal {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3.2rem;
+}
+
+.title {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-medium);
+    margin-bottom: 2.6rem;
+}
+
+.inputWrapper {
+    margin-bottom: 3.2rem;
+    position: relative;
+}
+
+.error {
+    position: absolute;
+    color: red;
+}

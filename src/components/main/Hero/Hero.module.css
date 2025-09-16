@@ -1,0 +1,11 @@
+.hero {
+    padding-top: 8.8rem;
+    padding-bottom: 12rem;
+}
+
+.heroTitle {
+    text-align: center;
+    font-size: var(--fs-xxl);
+    padding-bottom: 8.8rem;
+
+}

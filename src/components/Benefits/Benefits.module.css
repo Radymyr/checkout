@@ -1,0 +1,40 @@
+.benefits {
+    padding-bottom: 12rem;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15.2rem;
+
+    @media (max-width: 1024px) {
+        gap: 5rem;
+    }
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.card {
+    max-width: 27rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    margin-bottom: 5.7rem;
+}
+
+.title {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+}
+
+.subtitle {
+    font-size: var(--fs-base);
+    color: var(--text--subtext-color);
+}
