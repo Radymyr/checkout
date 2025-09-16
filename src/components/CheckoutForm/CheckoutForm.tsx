@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './CheckoutForm.module.css'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { Formik, Form } from 'formik'
 import { PersonalDetails } from '../main/PersonalDetails/PersonalDetails'
 import { ShippingDetails } from '../main/ShippingDetails/ShippingDetails'
 import { validationSchema } from '../../validationSchema/validationSchema'

@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles/global.css'
-import { Header } from './components/header/Header'
+import { Header } from './components/Header/Header'
 import { Hero } from './components/main/Hero/Hero'
 import { Benefits } from './components/Benefits/Benefits'
-import { Footer } from './components/footer/Footer'
+import { Footer } from './components/Footer/Footer'
 
 import { BENEFITS } from './constants/benefits'
 import { FOOTER_DATA } from './constants/footer'
