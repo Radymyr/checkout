@@ -47,12 +47,18 @@
     color: var(--text-placeholder-color);
 }
 
-.methods {
-    display: flex;
+.error {
+    position: absolute;
+    color: var(--error-color);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.4rem;
 
     @media (max-width: 1024px) {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 }
 

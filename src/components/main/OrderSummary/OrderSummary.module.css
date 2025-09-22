@@ -17,12 +17,27 @@
 }
 
 .item {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1.6rem;
     gap: 1.6rem;
     border-bottom: 1px solid var(--text--subtext-color);
+}
+
+.close {
+    top: -1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    right: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    cursor: pointer;
 }
 
 .image {
@@ -49,7 +64,7 @@
 }
 
 .promo {
-    margin-bottom: 7rem;
+    margin-bottom: 2.4rem;
 }
 
 .promoTitle {
@@ -63,8 +78,7 @@
 }
 
 .row {
-    margin-bottom: 3.2rem;
-
+    margin-bottom: 2.4rem;
 }
 
 .row,
@@ -80,7 +94,7 @@
     font-size: var(--fs-lg);
     font-weight: var(--fw-medium);
     border: none;
-    margin-bottom: 6rem;
+    margin-bottom: 2.4rem;
 }
 
 .checkoutButton {

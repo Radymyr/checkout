@@ -26,6 +26,7 @@ export const PersonalDetails: React.FC<Props> = ({
   handleBlur,
 }) => (
   <div className={styles.personal}>
+    {console.log(values)}
     <h2 className={styles.title}>Personal Details</h2>
     {fields.map((f) => (
       <div className={styles.inputWrapper} key={f.id}>

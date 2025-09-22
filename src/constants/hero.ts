@@ -19,41 +19,9 @@ export const SHIPPING_METHODS = [
 ]
 
 export const PAYMENT_METHODS = [
+  { title: 'Payment Method' },
   { name: 'Paypal', value: 'paypal', icon: '' },
   { name: 'Credit Card', value: 'credit', icon: '' },
-]
-
-export const ORDER_ITEMS = [
-  {
-    title: 'Capsul White',
-    subtitle: '15 Capsul • White • 4x',
-    price: '$140',
-    img: '',
-  },
-  {
-    title: 'Rainbow Drugs',
-    subtitle: '10 Capsul • White • 4x',
-    price: '$140',
-    img: '',
-  },
-  {
-    title: 'Rainbow Drugs White',
-    subtitle: '5 Capsul • White • 4x',
-    price: '$140',
-    img: '',
-  },
-  {
-    title: 'Zaitun Olive Oil',
-    subtitle: '2 Bottle • White • 4x',
-    price: '$140',
-    img: '',
-  },
-  {
-    title: 'Acetylcysteine Pill',
-    subtitle: '15 Capsul • White • 4x',
-    price: '$140',
-    img: '',
-  },
 ]
 
 export const ORDER_TOTAL = {

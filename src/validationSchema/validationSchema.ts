@@ -12,4 +12,5 @@ export const validationSchema = Yup.object().shape({
   country: Yup.string().required('Country is required'),
   shippingMethod: Yup.string().required('Select a shipping method'),
   paymentMethod: Yup.string().required('Select a payment method'),
+  promo: Yup.string().min(10),
 })

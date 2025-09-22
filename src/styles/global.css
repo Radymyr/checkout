@@ -1,5 +1,5 @@
-@import url('../../reset.css');
-@import url('../../general.css');
+@import url('reset.css');
+@import url('general.css');
 
 :root {
     --primary-color: #5A9BFE;
@@ -10,6 +10,7 @@
     --text--subtext-color: #AAAAAA;
     --text-dark-color: #000000;
     --text-placeholder-color: #07122E;
+    --error-color: red;
 
     --font-primary: "Ubuntu", sans-serif;
     --font-secondary: "DM Sans", sans-serif;
