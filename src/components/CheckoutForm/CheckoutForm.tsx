@@ -1,50 +1,50 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import styles from './CheckoutForm.module.css'
-import { Formik, Form } from 'formik'
-import { PersonalDetails } from '../main/PersonalDetails/PersonalDetails'
-import { ShippingDetails } from '../main/ShippingDetails/ShippingDetails'
-import { validationSchema } from '../../validationSchema/validationSchema'
-import { ORDER_TOTAL, PERSONAL_FIELDS } from '../../constants/hero'
-import { PaymentMethods } from '../main/PaymentMethods/PaymentMethods'
-import { OrderSummary } from '../main/OrderSummary/OrderSummary'
-import { getItems, addItems } from '../../storage/storage'
-import { DEFAULT_CARDS } from '../../data/defaultStorage'
+import React, { useCallback, useEffect, useState } from "react";
+import styles from "./CheckoutForm.module.css";
+import { Formik, Form } from "formik";
+import { PersonalDetails } from "../main/PersonalDetails/PersonalDetails";
+import { ShippingDetails } from "../main/ShippingDetails/ShippingDetails";
+import { validationSchema } from "../../validationSchema/validationSchema";
+import { ORDER_TOTAL, PERSONAL_FIELDS } from "../../constants/hero";
+import { PaymentMethods } from "../main/PaymentMethods/PaymentMethods";
+import { OrderSummary } from "../main/OrderSummary/OrderSummary";
+import { getItems, addItems } from "../../storage/storage";
+import { DEFAULT_CARDS } from "../../data/defaultStorage";
 
 const initialState = {
-  name: '',
-  email: '',
-  phone: '',
-  address: '',
-  city: '',
-  zip: '',
-  country: '',
-  shippingMethod: 'odeon',
-  paymentMethod: 'paypal',
-  promo: '',
-}
+  name: "",
+  email: "",
+  phone: "",
+  address: "",
+  city: "",
+  zip: "",
+  country: "",
+  shippingMethod: "odeon",
+  paymentMethod: "paypal",
+  promo: "",
+};
 
-const BASE_URL = 'https://checkout-backend-ten.vercel.app'
+const BASE_URL = "https://checkout-backend-ten.vercel.app";
 
 export const CheckoutForm = () => {
-  const [items, setItems] = useState(getItems())
-  const [totalPrice, setTotalPrice] = useState(0)
+  const [items, setItems] = useState(getItems());
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const handleRemove = useCallback((id: string) => {
     setItems((prevState) => {
       return prevState.filter((item) => {
-        return item.id !== id
-      })
-    })
-  }, [])
+        return item.id !== id;
+      });
+    });
+  }, []);
 
   useEffect(() => {
-    addItems(items)
+    addItems(items);
     const sum = items.reduce(
       (acc, curr) => acc + Number(curr.price.slice(1)),
       0,
-    )
-    setTotalPrice(sum)
-  }, [items])
+    );
+    setTotalPrice(sum);
+  }, [items]);
 
   return (
     <Formik
@@ -54,20 +54,24 @@ export const CheckoutForm = () => {
         const dataToSend = {
           ...values,
           order: items,
-        }
+        };
 
         fetch(`${BASE_URL}/api/orders`, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(dataToSend),
         })
           .then(() => {
-            addItems(DEFAULT_CARDS)
-            resetForm()
+            setItems([]);
+            resetForm();
           })
-          .catch((err) => console.error('something went wrong:', err))
+          .catch((err) => {
+            setItems([]);
+
+            console.error("something went wrong:", err);
+          });
       }}
     >
       {({ handleChange, values, errors, touched, handleBlur }) => {
@@ -107,8 +111,8 @@ export const CheckoutForm = () => {
               totalPrice={totalPrice}
             />
           </Form>
-        )
+        );
       }}
     </Formik>
-  )
-}
+  );
+};
