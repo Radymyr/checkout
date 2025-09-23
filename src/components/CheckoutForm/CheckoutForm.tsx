@@ -23,6 +23,8 @@ const initialState = {
   promo: '',
 }
 
+// const BASE_URL = 'https://checkout-backend-ten.vercel.app'
+
 export const CheckoutForm = () => {
   const [items, setItems] = useState(getItems())
   const [totalPrice, setTotalPrice] = useState(0)
@@ -54,7 +56,7 @@ export const CheckoutForm = () => {
           order: items,
         }
 
-        fetch('http://localhost:8080/order', {
+        fetch('BASE_URL/api/orders', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -62,7 +64,6 @@ export const CheckoutForm = () => {
           body: JSON.stringify(dataToSend),
         })
           .then(() => {
-            console.log('sent success')
             addItems(DEFAULT_CARDS)
             resetForm()
           })
