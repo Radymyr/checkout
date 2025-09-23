@@ -9,6 +9,7 @@ import { PaymentMethods } from "../main/PaymentMethods/PaymentMethods";
 import { OrderSummary } from "../main/OrderSummary/OrderSummary";
 import { getItems, addItems } from "../../storage/storage";
 import { DEFAULT_CARDS } from "../../data/defaultStorage";
+import { Snackbar } from "@mui/material";
 
 const initialState = {
   name: "",
@@ -28,6 +29,7 @@ const BASE_URL = "https://checkout-backend-ten.vercel.app";
 export const CheckoutForm = () => {
   const [items, setItems] = useState(getItems());
   const [totalPrice, setTotalPrice] = useState(0);
+  const [isModal, setIsModal] = useState(false);
 
   const handleRemove = useCallback((id: string) => {
     setItems((prevState) => {
@@ -36,6 +38,8 @@ export const CheckoutForm = () => {
       });
     });
   }, []);
+
+  const handleClose = () => setIsModal(false);
 
   useEffect(() => {
     addItems(items);
@@ -66,6 +70,7 @@ export const CheckoutForm = () => {
           .then(() => {
             setItems([]);
             resetForm();
+            setIsModal(true);
           })
           .catch((err) => {
             setItems([]);
@@ -77,6 +82,12 @@ export const CheckoutForm = () => {
       {({ handleChange, values, errors, touched, handleBlur }) => {
         return (
           <Form className={styles.form}>
+            <Snackbar
+              open={isModal}
+              autoHideDuration={5000}
+              onClose={handleClose}
+              message="Thank you, the data has been sent"
+            />
             <div>
               <PersonalDetails
                 fields={PERSONAL_FIELDS}
