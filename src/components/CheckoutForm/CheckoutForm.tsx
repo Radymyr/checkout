@@ -23,7 +23,7 @@ const initialState = {
   promo: '',
 }
 
-// const BASE_URL = 'https://checkout-backend-ten.vercel.app'
+const BASE_URL = 'https://checkout-backend-ten.vercel.app'
 
 export const CheckoutForm = () => {
   const [items, setItems] = useState(getItems())
@@ -56,7 +56,7 @@ export const CheckoutForm = () => {
           order: items,
         }
 
-        fetch('BASE_URL/api/orders', {
+        fetch(`${BASE_URL}/api/orders`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
